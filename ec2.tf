@@ -3,7 +3,7 @@ resource "aws_instance" "terraform_app_server" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   tags = {
-    Name = "Terraform"
+    Name = "Terraform-${var.environment}"
     # Project = "${local.identifier}"
     Project     = var.project
     Environment = var.environment
